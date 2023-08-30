@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		283CEA052A9CF42300BEB721 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283CEA042A9CF42300BEB721 /* AppDelegate.swift */; };
 		283CEA072A9CF42300BEB721 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283CEA062A9CF42300BEB721 /* SceneDelegate.swift */; };
-		283CEA092A9CF42300BEB721 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283CEA082A9CF42300BEB721 /* ViewController.swift */; };
+		283CEA092A9CF42300BEB721 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283CEA082A9CF42300BEB721 /* LoginViewController.swift */; };
 		283CEA0C2A9CF42300BEB721 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 283CEA0A2A9CF42300BEB721 /* Main.storyboard */; };
 		283CEA0F2A9CF42300BEB721 /* ShahidTT.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 283CEA0D2A9CF42300BEB721 /* ShahidTT.xcdatamodeld */; };
 		283CEA112A9CF42500BEB721 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 283CEA102A9CF42500BEB721 /* Assets.xcassets */; };
@@ -17,6 +17,10 @@
 		283CEA1F2A9CF42600BEB721 /* ShahidTTTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283CEA1E2A9CF42600BEB721 /* ShahidTTTests.swift */; };
 		283CEA292A9CF42600BEB721 /* ShahidTTUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283CEA282A9CF42600BEB721 /* ShahidTTUITests.swift */; };
 		283CEA2B2A9CF42600BEB721 /* ShahidTTUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283CEA2A2A9CF42600BEB721 /* ShahidTTUITestsLaunchTests.swift */; };
+		283CEA402A9E240F00BEB721 /* NetworkLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283CEA3F2A9E240F00BEB721 /* NetworkLayer.swift */; };
+		283CEA442A9F3DF500BEB721 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283CEA432A9F3DF500BEB721 /* Extensions.swift */; };
+		283CEA462A9F3EBF00BEB721 /* KeyboardLayoutConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283CEA452A9F3EBE00BEB721 /* KeyboardLayoutConstraint.swift */; };
+		283CEA4B2A9F99E500BEB721 /* loginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283CEA4A2A9F99E500BEB721 /* loginViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,7 +44,7 @@
 		283CEA012A9CF42300BEB721 /* ShahidTT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShahidTT.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		283CEA042A9CF42300BEB721 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		283CEA062A9CF42300BEB721 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		283CEA082A9CF42300BEB721 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		283CEA082A9CF42300BEB721 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		283CEA0B2A9CF42300BEB721 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		283CEA0E2A9CF42300BEB721 /* ShahidTT.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ShahidTT.xcdatamodel; sourceTree = "<group>"; };
 		283CEA102A9CF42500BEB721 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -51,6 +55,10 @@
 		283CEA242A9CF42600BEB721 /* ShahidTTUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ShahidTTUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		283CEA282A9CF42600BEB721 /* ShahidTTUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShahidTTUITests.swift; sourceTree = "<group>"; };
 		283CEA2A2A9CF42600BEB721 /* ShahidTTUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShahidTTUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		283CEA3F2A9E240F00BEB721 /* NetworkLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLayer.swift; sourceTree = "<group>"; };
+		283CEA432A9F3DF500BEB721 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		283CEA452A9F3EBE00BEB721 /* KeyboardLayoutConstraint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardLayoutConstraint.swift; sourceTree = "<group>"; };
+		283CEA4A2A9F99E500BEB721 /* loginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,9 +109,10 @@
 		283CEA032A9CF42300BEB721 /* ShahidTT */ = {
 			isa = PBXGroup;
 			children = (
+				283CEA492A9F559800BEB721 /* Helpers */,
+				283CEA472A9F557700BEB721 /* Modules */,
 				283CEA042A9CF42300BEB721 /* AppDelegate.swift */,
 				283CEA062A9CF42300BEB721 /* SceneDelegate.swift */,
-				283CEA082A9CF42300BEB721 /* ViewController.swift */,
 				283CEA0A2A9CF42300BEB721 /* Main.storyboard */,
 				283CEA102A9CF42500BEB721 /* Assets.xcassets */,
 				283CEA122A9CF42500BEB721 /* LaunchScreen.storyboard */,
@@ -128,6 +137,33 @@
 				283CEA2A2A9CF42600BEB721 /* ShahidTTUITestsLaunchTests.swift */,
 			);
 			path = ShahidTTUITests;
+			sourceTree = "<group>";
+		};
+		283CEA472A9F557700BEB721 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				283CEA482A9F558300BEB721 /* Login */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		283CEA482A9F558300BEB721 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				283CEA082A9CF42300BEB721 /* LoginViewController.swift */,
+				283CEA4A2A9F99E500BEB721 /* loginViewModel.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		283CEA492A9F559800BEB721 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				283CEA3F2A9E240F00BEB721 /* NetworkLayer.swift */,
+				283CEA432A9F3DF500BEB721 /* Extensions.swift */,
+				283CEA452A9F3EBE00BEB721 /* KeyboardLayoutConstraint.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -261,9 +297,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				283CEA092A9CF42300BEB721 /* ViewController.swift in Sources */,
+				283CEA092A9CF42300BEB721 /* LoginViewController.swift in Sources */,
+				283CEA442A9F3DF500BEB721 /* Extensions.swift in Sources */,
 				283CEA052A9CF42300BEB721 /* AppDelegate.swift in Sources */,
 				283CEA0F2A9CF42300BEB721 /* ShahidTT.xcdatamodeld in Sources */,
+				283CEA4B2A9F99E500BEB721 /* loginViewModel.swift in Sources */,
+				283CEA462A9F3EBF00BEB721 /* KeyboardLayoutConstraint.swift in Sources */,
+				283CEA402A9E240F00BEB721 /* NetworkLayer.swift in Sources */,
 				283CEA072A9CF42300BEB721 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -444,11 +484,12 @@
 				DEVELOPMENT_TEAM = BBPMEE95U2;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ShahidTT/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Giphy Images";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -472,11 +513,12 @@
 				DEVELOPMENT_TEAM = BBPMEE95U2;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ShahidTT/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Giphy Images";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
