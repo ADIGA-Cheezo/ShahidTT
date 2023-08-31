@@ -11,7 +11,7 @@ class HomeViewModel {
     var GIFs: [Datum] = []
     var currentPage = 0
     let itemsPerPage = 20
-
+    
     func fetchData(completion: @escaping () -> Void) {
         let parameters: [String : Any] = ["api_key": API.APIKey,
                                           "limit": itemsPerPage,

@@ -11,6 +11,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     
     private let viewModel = HomeViewModel()
+    private let favoriteViewModel = FavoritesViewModel()
     
     private var isLoading = false
     private var reachedEnd = false
@@ -23,15 +24,28 @@ class HomeViewController: UIViewController {
     
     private func fetchData() {
         isLoading = true
-                viewModel.fetchData { [weak self] in
-                    self?.isLoading = false
-                    self?.collectionView.reloadData()
-                }
+        viewModel.fetchData { [weak self] in
+            self?.isLoading = false
+            self?.collectionView.reloadData()
         }
+    }
     
     private func setupUI() {
         title = "Home"
         tabBarItem = UITabBarItem(title: "Home", image: UIImage(systemName: "house"), tag: 0)
+        setupNavBar()
+    }
+    
+    private func setupNavBar() {
+        guard let image = UIImage(systemName: "magnifyingglass") else { return }
+        let button = UIBarButtonItem(image: image, style: .plain, target: self, action: #selector(search))
+//        button.tintColor = .systemYellow
+        navigationItem.rightBarButtonItem = button
+    }
+    
+    @objc func search() {
+        // Handle button tap event here
+        // For example, you can navigate to another view controller
     }
     
     private func configureCollectionView() {
@@ -64,6 +78,11 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
             }
         }
         
+        cell.toggleFavoriteHandler = { [weak self] in
+            self?.favoriteViewModel.toggleFavoriteStatus(for: cellData[indexPath.item])
+                    cell.favoriteButton.isSelected = !cell.favoriteButton.isSelected
+                }
+        
         return cell
     }
     
@@ -90,13 +109,13 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-            let offsetY = scrollView.contentOffset.y
-            let contentHeight = scrollView.contentSize.height
-            let screenHeight = scrollView.frame.height
-
-            if offsetY > contentHeight - screenHeight && !isLoading && !reachedEnd {
-                viewModel.currentPage += 1
-                fetchData()
-            }
+        let offsetY = scrollView.contentOffset.y
+        let contentHeight = scrollView.contentSize.height
+        let screenHeight = scrollView.frame.height
+        
+        if offsetY > contentHeight - screenHeight && !isLoading && !reachedEnd {
+            viewModel.currentPage += 1
+            fetchData()
         }
+    }
 }

@@ -15,9 +15,8 @@ class loginViewModel {
                                       "nezar.Najdawi@shahid.net",
                                       "nizar.Basbous@shahid.net",
                                       "laith.Shanti@mbc.net"]
-
+    
     func login(completion: @escaping (Bool) -> Void) {
-        // Simulate login functionality
         if allowedEmailsArray.contains(username.lowercased()) && password == "password" {
             completion(true)
         } else {

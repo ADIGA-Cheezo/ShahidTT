@@ -15,12 +15,12 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     private let viewModel = loginViewModel()
     
     private lazy var homeViewController: HomeViewController = {
-            return HomeViewController(nibName: ControllerName.home, bundle: nil)
-        }()
-        
-        private lazy var favoritesViewController: FavoritesViewController = {
-            return FavoritesViewController(nibName: ControllerName.favorites, bundle: nil)
-        }()
+        return HomeViewController(nibName: ControllerName.home, bundle: nil)
+    }()
+    
+    private lazy var favoritesViewController: FavoritesViewController = {
+        return FavoritesViewController(nibName: ControllerName.favorites, bundle: nil)
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -84,30 +84,30 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     private func login() {
         self.showTabBarController()
-//        viewModel.login { success in
-//            if success {
-//                print("success")
-//                self.showTabBarController()
-//            } else {
-//                let alert = UIAlertController(title: "Login Failed", message: "Invalid credentials.", preferredStyle: .alert)
-//                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-//                self.present(alert, animated: true, completion: nil)
-//            }
-//        }
+        //        viewModel.login { success in
+        //            if success {
+        //                print("success")
+        //                self.showTabBarController()
+        //            } else {
+        //                let alert = UIAlertController(title: "Login Failed", message: "Invalid credentials.", preferredStyle: .alert)
+        //                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        //                self.present(alert, animated: true, completion: nil)
+        //            }
+        //        }
     }
     
     private func showTabBarController() {
         let tabBarController = UITabBarController()
-
+        
         let homeNavigationController = UINavigationController(rootViewController: homeViewController)
         let favoritesNavigationController = UINavigationController(rootViewController: favoritesViewController)
-
+        
         tabBarController.viewControllers = [homeNavigationController, favoritesNavigationController]
         
         tabBarController.modalPresentationStyle = .fullScreen
-
+        
         self.present(tabBarController, animated: true, completion: nil)
-        }
+    }
     
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

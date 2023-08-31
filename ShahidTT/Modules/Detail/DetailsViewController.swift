@@ -15,12 +15,28 @@ class DetailsViewController: UIViewController {
     @IBOutlet weak var slugLabel: UILabel!
     @IBOutlet weak var URLButton: UIButton!
     
+    private let favoriteViewModel = FavoritesViewModel()
+    private var activityIndicator: UIActivityIndicatorView!
+    
     var GIF: Datum?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavBar()
+        addIndicator()
         fillData()
+    }
+    
+    private func addIndicator() {
+        activityIndicator = UIActivityIndicatorView(style: .medium)
+        activityIndicator.translatesAutoresizingMaskIntoConstraints = false
+        imageView.addSubview(activityIndicator)
+        activityIndicator.startAnimating()
+        
+        NSLayoutConstraint.activate([
+            activityIndicator.centerXAnchor.constraint(equalTo: imageView.centerXAnchor),
+            activityIndicator.centerYAnchor.constraint(equalTo: imageView.centerYAnchor)
+        ])
     }
     
     private func fillData() {
@@ -38,6 +54,8 @@ class DetailsViewController: UIViewController {
         DispatchQueue.global(qos: .background).async {
             let imageURL = UIImage.gifImageWithURL(imageURL)
             DispatchQueue.main.async {
+                self.activityIndicator.stopAnimating()
+                self.activityIndicator.isHidden = true
                 self.imageView.image = imageURL
             }
         }
@@ -45,14 +63,14 @@ class DetailsViewController: UIViewController {
     
     private func setupNavBar() {
         guard let image = UIImage(systemName: "star") else { return }
-        let button = UIBarButtonItem(image: image, style: .plain, target: self, action: #selector(FavoriteTapped))
+        let button = UIBarButtonItem(image: image, style: .plain, target: self, action: #selector(favoriteTapped(_:)))
         button.tintColor = .systemYellow
         navigationItem.rightBarButtonItem = button
     }
     
-    @objc func FavoriteTapped() {
-        // Handle button tap event here
-        // For example, you can navigate to another view controller
+    @objc func favoriteTapped(_ sender: UIBarButtonItem) {
+        guard let GIF = GIF else { return }
+        favoriteViewModel.toggleFavoriteStatus(for: GIF)
     }
     
     @IBAction func didTapURL(_ sender: UIButton) {

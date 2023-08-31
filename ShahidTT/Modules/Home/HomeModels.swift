@@ -34,7 +34,7 @@ struct Datum: Codable {
     let user: User?
     let analyticsResponsePayload: String
     let analytics: Analytics
-
+    
     enum CodingKeys: String, CodingKey {
         case type, id, url, slug
         case bitlyGIFURL = "bitly_gif_url"
@@ -81,7 +81,7 @@ struct Images: Codable {
     let hd: The4_K?
     let the480WStill: The480_WStill
     let the4K: The4_K?
-
+    
     enum CodingKeys: String, CodingKey {
         case original, downsized
         case downsizedLarge = "downsized_large"
@@ -120,7 +120,7 @@ struct The480_WStill: Codable {
 struct The4_K: Codable {
     let height, width, mp4Size: String?
     let mp4: String?
-
+    
     enum CodingKeys: String, CodingKey {
         case height, width
         case mp4Size = "mp4_size"
@@ -137,7 +137,7 @@ struct FixedHeight: Codable {
     let webpSize: String?
     let webp: String?
     let frames, hash: String?
-
+    
     enum CodingKeys: String, CodingKey {
         case height, width, size, url
         case mp4Size = "mp4_size"
@@ -151,7 +151,7 @@ struct FixedHeight: Codable {
 struct Looping: Codable {
     let mp4Size: String?
     let mp4: String?
-
+    
     enum CodingKeys: String, CodingKey {
         case mp4Size = "mp4_size"
         case mp4
@@ -175,7 +175,7 @@ struct User: Codable {
     let instagramURL: String
     let websiteURL: String
     let isVerified: Bool
-
+    
     enum CodingKeys: String, CodingKey {
         case avatarURL = "avatar_url"
         case bannerImage = "banner_image"
@@ -194,7 +194,7 @@ struct User: Codable {
 struct Meta: Codable {
     let status: Int
     let msg, responseID: String
-
+    
     enum CodingKeys: String, CodingKey {
         case status, msg
         case responseID = "response_id"
@@ -204,7 +204,7 @@ struct Meta: Codable {
 // MARK: - Pagination
 struct Pagination: Codable {
     let totalCount, count, offset: Int
-
+    
     enum CodingKeys: String, CodingKey {
         case totalCount = "total_count"
         case count, offset

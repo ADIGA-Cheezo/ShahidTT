@@ -14,6 +14,8 @@ class GiphyCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var favoriteButton: UIButton!
     @IBOutlet weak var descriptionTextView: UITextView!
     
+    var toggleFavoriteHandler: (() -> Void)?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         self.containerView.layer.cornerRadius = 10
@@ -27,6 +29,7 @@ class GiphyCollectionViewCell: UICollectionViewCell {
         descriptionTextView.text = nil
     }
     
-    @IBAction func didTapFaboriteButton(_ sender: Any) {
+    @IBAction func didTapFavoriteButton(_ sender: Any) {
+        toggleFavoriteHandler?()
     }
 }

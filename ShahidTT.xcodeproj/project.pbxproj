@@ -33,6 +33,7 @@
 		2884270A2AA00BA800B05A23 /* iOSDevCenters+GIF.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288427092AA00BA800B05A23 /* iOSDevCenters+GIF.swift */; };
 		2884270E2AA06E0A00B05A23 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2884270C2AA06E0A00B05A23 /* DetailsViewController.swift */; };
 		2884270F2AA06E0A00B05A23 /* DetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2884270D2AA06E0A00B05A23 /* DetailsViewController.xib */; };
+		288427112AA0A35500B05A23 /* FavoritesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288427102AA0A35500B05A23 /* FavoritesViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +84,7 @@
 		288427092AA00BA800B05A23 /* iOSDevCenters+GIF.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "iOSDevCenters+GIF.swift"; sourceTree = "<group>"; };
 		2884270C2AA06E0A00B05A23 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		2884270D2AA06E0A00B05A23 /* DetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailsViewController.xib; sourceTree = "<group>"; };
+		288427102AA0A35500B05A23 /* FavoritesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -212,6 +214,7 @@
 			children = (
 				288426FA2A9FEBC000B05A23 /* FavoritesViewController.swift */,
 				288426FB2A9FEBC000B05A23 /* FavoritesViewController.xib */,
+				288427102AA0A35500B05A23 /* FavoritesViewModel.swift */,
 			);
 			path = Favorites;
 			sourceTree = "<group>";
@@ -376,6 +379,7 @@
 				283CEA052A9CF42300BEB721 /* AppDelegate.swift in Sources */,
 				283CEA0F2A9CF42300BEB721 /* ShahidTT.xcdatamodeld in Sources */,
 				283CEA4B2A9F99E500BEB721 /* loginViewModel.swift in Sources */,
+				288427112AA0A35500B05A23 /* FavoritesViewModel.swift in Sources */,
 				288427082A9FF6D900B05A23 /* HomeModels.swift in Sources */,
 				288426F82A9FEBA300B05A23 /* HomeViewController.swift in Sources */,
 				288427052A9FF44300B05A23 /* GiphyCollectionViewCell.swift in Sources */,
