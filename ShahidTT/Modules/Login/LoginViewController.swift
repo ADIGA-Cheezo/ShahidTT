@@ -14,6 +14,14 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     private let viewModel = loginViewModel()
     
+    private lazy var homeViewController: HomeViewController = {
+            return HomeViewController(nibName: ControllerName.home, bundle: nil)
+        }()
+        
+        private lazy var favoritesViewController: FavoritesViewController = {
+            return FavoritesViewController(nibName: ControllerName.favorites, bundle: nil)
+        }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         usernameTextField.delegate = self
@@ -33,6 +41,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         if let gradientLayer = view.layer.sublayers?.first as? CAGradientLayer {
             gradientLayer.frame = view.bounds
         }
+        login()
     }
     
     @objc private func usernameTextFieldChanged() {
@@ -55,8 +64,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     private func setupGradient() {
         let gradientLayer = CAGradientLayer()
         // Set the colors and locations for the gradient layer
-        guard let accentColor = UIColor(named: "AccentColor")?.cgColor else { return }
-        gradientLayer.colors = [UIColor.systemBackground.cgColor, accentColor]
+        gradientLayer.colors = [UIColor.systemBackground.cgColor, Color.primary.cgColor]
         gradientLayer.locations = [0.0, 1.0]
         
         // Set the start and end points for the gradient layer
@@ -75,17 +83,31 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     
     private func login() {
-        viewModel.login { success in
-            if success {
-//                self.performSegue(withIdentifier: "LoggedInSegue", sender: nil)
-                print("success")
-            } else {
-                let alert = UIAlertController(title: "Login Failed", message: "Invalid credentials.", preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-                self.present(alert, animated: true, completion: nil)
-            }
-        }
+        self.showTabBarController()
+//        viewModel.login { success in
+//            if success {
+//                print("success")
+//                self.showTabBarController()
+//            } else {
+//                let alert = UIAlertController(title: "Login Failed", message: "Invalid credentials.", preferredStyle: .alert)
+//                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+//                self.present(alert, animated: true, completion: nil)
+//            }
+//        }
     }
+    
+    private func showTabBarController() {
+        let tabBarController = UITabBarController()
+
+        let homeNavigationController = UINavigationController(rootViewController: homeViewController)
+        let favoritesNavigationController = UINavigationController(rootViewController: favoritesViewController)
+
+        tabBarController.viewControllers = [homeNavigationController, favoritesNavigationController]
+        
+        tabBarController.modalPresentationStyle = .fullScreen
+
+        self.present(tabBarController, animated: true, completion: nil)
+        }
     
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

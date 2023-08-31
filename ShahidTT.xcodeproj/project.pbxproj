@@ -21,6 +21,18 @@
 		283CEA442A9F3DF500BEB721 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283CEA432A9F3DF500BEB721 /* Extensions.swift */; };
 		283CEA462A9F3EBF00BEB721 /* KeyboardLayoutConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283CEA452A9F3EBE00BEB721 /* KeyboardLayoutConstraint.swift */; };
 		283CEA4B2A9F99E500BEB721 /* loginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283CEA4A2A9F99E500BEB721 /* loginViewModel.swift */; };
+		288426F82A9FEBA300B05A23 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288426F62A9FEBA300B05A23 /* HomeViewController.swift */; };
+		288426F92A9FEBA300B05A23 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 288426F72A9FEBA300B05A23 /* HomeViewController.xib */; };
+		288426FC2A9FEBC000B05A23 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288426FA2A9FEBC000B05A23 /* FavoritesViewController.swift */; };
+		288426FD2A9FEBC000B05A23 /* FavoritesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 288426FB2A9FEBC000B05A23 /* FavoritesViewController.xib */; };
+		288426FF2A9FECDC00B05A23 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288426FE2A9FECDC00B05A23 /* Constants.swift */; };
+		288427012A9FF39000B05A23 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288427002A9FF39000B05A23 /* HomeViewModel.swift */; };
+		288427052A9FF44300B05A23 /* GiphyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288427032A9FF44300B05A23 /* GiphyCollectionViewCell.swift */; };
+		288427062A9FF44300B05A23 /* GiphyCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 288427042A9FF44300B05A23 /* GiphyCollectionViewCell.xib */; };
+		288427082A9FF6D900B05A23 /* HomeModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288427072A9FF6D900B05A23 /* HomeModels.swift */; };
+		2884270A2AA00BA800B05A23 /* iOSDevCenters+GIF.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288427092AA00BA800B05A23 /* iOSDevCenters+GIF.swift */; };
+		2884270E2AA06E0A00B05A23 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2884270C2AA06E0A00B05A23 /* DetailsViewController.swift */; };
+		2884270F2AA06E0A00B05A23 /* DetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2884270D2AA06E0A00B05A23 /* DetailsViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +71,18 @@
 		283CEA432A9F3DF500BEB721 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		283CEA452A9F3EBE00BEB721 /* KeyboardLayoutConstraint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardLayoutConstraint.swift; sourceTree = "<group>"; };
 		283CEA4A2A9F99E500BEB721 /* loginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginViewModel.swift; sourceTree = "<group>"; };
+		288426F62A9FEBA300B05A23 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		288426F72A9FEBA300B05A23 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		288426FA2A9FEBC000B05A23 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
+		288426FB2A9FEBC000B05A23 /* FavoritesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavoritesViewController.xib; sourceTree = "<group>"; };
+		288426FE2A9FECDC00B05A23 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		288427002A9FF39000B05A23 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		288427032A9FF44300B05A23 /* GiphyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiphyCollectionViewCell.swift; sourceTree = "<group>"; };
+		288427042A9FF44300B05A23 /* GiphyCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GiphyCollectionViewCell.xib; sourceTree = "<group>"; };
+		288427072A9FF6D900B05A23 /* HomeModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModels.swift; sourceTree = "<group>"; };
+		288427092AA00BA800B05A23 /* iOSDevCenters+GIF.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "iOSDevCenters+GIF.swift"; sourceTree = "<group>"; };
+		2884270C2AA06E0A00B05A23 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
+		2884270D2AA06E0A00B05A23 /* DetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailsViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +166,10 @@
 		283CEA472A9F557700BEB721 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				2884270B2AA0116A00B05A23 /* Detail */,
+				288427022A9FF42200B05A23 /* GiphyCell */,
+				288426F52A9FE9B400B05A23 /* Favorites */,
+				288426F42A9FE9A400B05A23 /* Home */,
 				283CEA482A9F558300BEB721 /* Login */,
 			);
 			path = Modules;
@@ -159,11 +187,51 @@
 		283CEA492A9F559800BEB721 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				288427092AA00BA800B05A23 /* iOSDevCenters+GIF.swift */,
 				283CEA3F2A9E240F00BEB721 /* NetworkLayer.swift */,
 				283CEA432A9F3DF500BEB721 /* Extensions.swift */,
 				283CEA452A9F3EBE00BEB721 /* KeyboardLayoutConstraint.swift */,
+				288426FE2A9FECDC00B05A23 /* Constants.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		288426F42A9FE9A400B05A23 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				288426F62A9FEBA300B05A23 /* HomeViewController.swift */,
+				288426F72A9FEBA300B05A23 /* HomeViewController.xib */,
+				288427002A9FF39000B05A23 /* HomeViewModel.swift */,
+				288427072A9FF6D900B05A23 /* HomeModels.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		288426F52A9FE9B400B05A23 /* Favorites */ = {
+			isa = PBXGroup;
+			children = (
+				288426FA2A9FEBC000B05A23 /* FavoritesViewController.swift */,
+				288426FB2A9FEBC000B05A23 /* FavoritesViewController.xib */,
+			);
+			path = Favorites;
+			sourceTree = "<group>";
+		};
+		288427022A9FF42200B05A23 /* GiphyCell */ = {
+			isa = PBXGroup;
+			children = (
+				288427032A9FF44300B05A23 /* GiphyCollectionViewCell.swift */,
+				288427042A9FF44300B05A23 /* GiphyCollectionViewCell.xib */,
+			);
+			path = GiphyCell;
+			sourceTree = "<group>";
+		};
+		2884270B2AA0116A00B05A23 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				2884270C2AA06E0A00B05A23 /* DetailsViewController.swift */,
+				2884270D2AA06E0A00B05A23 /* DetailsViewController.xib */,
+			);
+			path = Detail;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -270,9 +338,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2884270F2AA06E0A00B05A23 /* DetailsViewController.xib in Resources */,
 				283CEA142A9CF42500BEB721 /* LaunchScreen.storyboard in Resources */,
 				283CEA112A9CF42500BEB721 /* Assets.xcassets in Resources */,
+				288427062A9FF44300B05A23 /* GiphyCollectionViewCell.xib in Resources */,
 				283CEA0C2A9CF42300BEB721 /* Main.storyboard in Resources */,
+				288426FD2A9FEBC000B05A23 /* FavoritesViewController.xib in Resources */,
+				288426F92A9FEBA300B05A23 /* HomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,12 +370,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				283CEA092A9CF42300BEB721 /* LoginViewController.swift in Sources */,
+				2884270A2AA00BA800B05A23 /* iOSDevCenters+GIF.swift in Sources */,
+				288426FF2A9FECDC00B05A23 /* Constants.swift in Sources */,
 				283CEA442A9F3DF500BEB721 /* Extensions.swift in Sources */,
 				283CEA052A9CF42300BEB721 /* AppDelegate.swift in Sources */,
 				283CEA0F2A9CF42300BEB721 /* ShahidTT.xcdatamodeld in Sources */,
 				283CEA4B2A9F99E500BEB721 /* loginViewModel.swift in Sources */,
+				288427082A9FF6D900B05A23 /* HomeModels.swift in Sources */,
+				288426F82A9FEBA300B05A23 /* HomeViewController.swift in Sources */,
+				288427052A9FF44300B05A23 /* GiphyCollectionViewCell.swift in Sources */,
+				288427012A9FF39000B05A23 /* HomeViewModel.swift in Sources */,
+				2884270E2AA06E0A00B05A23 /* DetailsViewController.swift in Sources */,
 				283CEA462A9F3EBF00BEB721 /* KeyboardLayoutConstraint.swift in Sources */,
 				283CEA402A9E240F00BEB721 /* NetworkLayer.swift in Sources */,
+				288426FC2A9FEBC000B05A23 /* FavoritesViewController.swift in Sources */,
 				283CEA072A9CF42300BEB721 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
