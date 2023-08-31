@@ -23,3 +23,9 @@ enum ControllerName {
     static let favorites = "FavoritesViewController"
     static let details = "DetailsViewController"
 }
+
+class UserDataManager {
+    static let shared = UserDataManager()
+
+    var username: String = ""
+}

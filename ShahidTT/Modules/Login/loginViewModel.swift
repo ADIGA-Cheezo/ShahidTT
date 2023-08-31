@@ -18,6 +18,7 @@ class loginViewModel {
     
     func login(completion: @escaping (Bool) -> Void) {
         if allowedEmailsArray.contains(username.lowercased()) && password == "password" {
+            UserDataManager.shared.username = username
             completion(true)
         } else {
             completion(false)

@@ -6,11 +6,19 @@
 //
 
 import UIKit
+import CoreData
 
 class FavoritesViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     
     private let favoriteViewModel = FavoritesViewModel()
+    
+    private var images: [NSManagedObject] = [] {
+        didSet {
+            collectionView.reloadData()
+            setupUI()
+        }
+    }
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -27,8 +35,13 @@ class FavoritesViewController: UIViewController {
         configureCollectionView()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        fetchFavorites()
+    }
+    
     private func setupUI() {
-        title = "Favorites"
+        title = "Favorites (\(images.count))"
         tabBarItem = UITabBarItem(title: "Favorites", image: UIImage(systemName: "star"), tag: 0)
     }
     
@@ -37,31 +50,39 @@ class FavoritesViewController: UIViewController {
         collectionView.dataSource = self
         collectionView.register(UINib(nibName: "GiphyCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "GiphyCollectionViewCell")
     }
+    
+    private func fetchFavorites() {
+        images = favoriteViewModel.loadPhotos(forUser: UserDataManager.shared.username)
+    }
 
 }
 
 extension FavoritesViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 0
+        return images.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "GiphyCollectionViewCell", for: indexPath) as? GiphyCollectionViewCell else {
             fatalError("Could not dequeue MyCollectionViewCell")
         }
-//        let cellData = viewModel.GIFs
-//        guard let GIFURL = cellData[indexPath.item].images.fixedWidthDownsampled.url else { return cell }
-//        //this seemed to be the most efficient implementation to avoid memory leaks, cahcing is of course a better solution but due to time restriction i won't be able to implement it
-//
-//        cell.GIFTitleLabel.text = cellData[indexPath.item].title
-//        cell.descriptionTextView.text = cellData[indexPath.item].title //couldn't find description in object
-//
-//        DispatchQueue.global(qos: .background).async {
-//            let imageURL = UIImage.gifImageWithURL(GIFURL)
-//            DispatchQueue.main.async {
-//                cell.GIFimageView.image = imageURL
-//            }
-//        }
+        cell.favoriteButton.isHidden = true // should be placed in a config function inside cell class
+        
+        let cellData = images[indexPath.item]
+        let GIFURL = cellData.value(forKey: "imageURLString") as? String ?? ""
+        //this seemed to be the most efficient implementation to avoid memory leaks, cahcing is of course a better solution but due to time restriction i won't be able to implement it
+
+        cell.GIFTitleLabel.text = cellData.value(forKey: "title") as? String ?? "No title"
+        cell.descriptionTextView.text = cellData.value(forKey: "datumDescription") as? String ?? "No description" //couldn't find description in object
+
+        DispatchQueue.global(qos: .background).async {
+            if !GIFURL.isEmpty {
+                let imageURL = UIImage.gifImageWithURL(GIFURL)
+                DispatchQueue.main.async {
+                    cell.GIFimageView.image = imageURL
+                }
+            }
+        }
         
         return cell
     }

@@ -1,4 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="false" userDefinedModelVersionIdentifier="">
-    <elements/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21754" systemVersion="22C65" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="StoredGif" representedClassName="StoredGif" syncable="YES">
+        <attribute name="associatedEmail" optional="YES" attributeType="String"/>
+        <attribute name="datumDescription" optional="YES" attributeType="String"/>
+        <attribute name="imageURLString" optional="YES" attributeType="String"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
+        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="StoredUser" inverseName="favorites" inverseEntity="StoredUser"/>
+    </entity>
+    <entity name="StoredUser" representedClassName="StoredUser" syncable="YES">
+        <attribute name="userName" optional="YES" attributeType="String"/>
+        <relationship name="favorites" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="StoredGif" inverseName="user" inverseEntity="StoredGif"/>
+    </entity>
 </model>
