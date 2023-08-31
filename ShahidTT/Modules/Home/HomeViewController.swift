@@ -8,6 +8,7 @@
 import UIKit
 
 class HomeViewController: UIViewController {
+    @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var collectionView: UICollectionView!
     
     private let viewModel = HomeViewModel()
@@ -15,11 +16,21 @@ class HomeViewController: UIViewController {
     
     private var isLoading = false
     private var reachedEnd = false
+    private var searchActive = false {
+        didSet {
+            if searchActive {
+                collectionView.reloadData()
+            } else {
+                fetchData()
+            }
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
         configureCollectionView()
+        fetchData()
     }
     
     private func fetchData() {
@@ -39,18 +50,24 @@ class HomeViewController: UIViewController {
     private func setupNavBar() {
         guard let image = UIImage(systemName: "magnifyingglass") else { return }
         let button = UIBarButtonItem(image: image, style: .plain, target: self, action: #selector(search))
-//        button.tintColor = .systemYellow
         navigationItem.rightBarButtonItem = button
     }
     
     @objc func search() {
-        // Handle button tap event here
-        // For example, you can navigate to another view controller
+        UIView.animate(withDuration: 0.5) {
+            self.searchBar.isHidden = !self.searchBar.isHidden
+            if self.searchBar.isHidden {
+                self.searchBar.resignFirstResponder()
+            } else {
+                self.searchBar.becomeFirstResponder()
+            }
+        }
     }
     
     private func configureCollectionView() {
         collectionView.delegate = self
         collectionView.dataSource = self
+        searchBar.delegate = self
         collectionView.register(UINib(nibName: "GiphyCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "GiphyCollectionViewCell")
     }
 }
@@ -88,7 +105,7 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        let noOfCellsInRow = 2
+        let noOfCellsInRow = UIDevice.current.userInterfaceIdiom == .pad ? 5 : 2
         
         let flowLayout = collectionViewLayout as! UICollectionViewFlowLayout
         
@@ -118,4 +135,23 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
             fetchData()
         }
     }
+}
+
+extension HomeViewController: UISearchBarDelegate {
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+            searchActive = true;
+        }
+
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+            searchActive = false;
+        }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+            searchActive = true;
+        
+        viewModel.search(query: searchBar.text ?? "") { [weak self] in
+            self?.isLoading = false
+            self?.collectionView.reloadData()
+        }
+        }
 }

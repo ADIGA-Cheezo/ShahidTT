@@ -11,6 +11,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="ShahidTT" customModuleProvider="target">
             <connections>
                 <outlet property="collectionView" destination="1cr-LT-84b" id="tST-2E-laB"/>
+                <outlet property="searchBar" destination="n9H-ay-Oxc" id="URw-Iz-i5b"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -19,24 +20,36 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="1cr-LT-84b">
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="jps-M7-4pA">
                     <rect key="frame" x="0.0" y="59" width="393" height="759"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="QXv-hW-rzu">
-                        <size key="itemSize" width="128" height="128"/>
-                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                    </collectionViewFlowLayout>
-                </collectionView>
+                    <subviews>
+                        <searchBar hidden="YES" contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="n9H-ay-Oxc">
+                            <rect key="frame" x="0.0" y="0.0" width="393" height="0.0"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="-1" id="Mkg-BZ-tro"/>
+                            </connections>
+                        </searchBar>
+                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="1cr-LT-84b">
+                            <rect key="frame" x="0.0" y="0.0" width="393" height="759"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="QXv-hW-rzu">
+                                <size key="itemSize" width="128" height="128"/>
+                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            </collectionViewFlowLayout>
+                        </collectionView>
+                    </subviews>
+                </stackView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="1cr-LT-84b" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="2xJ-3g-X68"/>
-                <constraint firstItem="1cr-LT-84b" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="33O-ub-hxd"/>
-                <constraint firstItem="1cr-LT-84b" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="lM7-hT-xsf"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="1cr-LT-84b" secondAttribute="trailing" id="oVy-lj-E7b"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="jps-M7-4pA" secondAttribute="bottom" id="5Jd-kE-j8c"/>
+                <constraint firstItem="jps-M7-4pA" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="6tI-0u-QvY"/>
+                <constraint firstItem="jps-M7-4pA" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="DoM-4l-miC"/>
+                <constraint firstItem="jps-M7-4pA" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="J0w-JP-Dh1"/>
             </constraints>
             <point key="canvasLocation" x="122.90076335877862" y="19.718309859154932"/>
         </view>

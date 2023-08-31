@@ -37,6 +37,7 @@ class FavoritesViewModel {
     
     // Toggle favorite status for a photo
     func toggleFavoriteStatus(for GIF: Datum) {
+        UIImpactFeedbackGenerator(style: .rigid).impactOccurred()
         createData(GIF)
     }
     

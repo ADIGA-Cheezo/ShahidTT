@@ -89,7 +89,7 @@ extension FavoritesViewController: UICollectionViewDelegate, UICollectionViewDat
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        let noOfCellsInRow = 2
+        let noOfCellsInRow = UIDevice.current.userInterfaceIdiom == .pad ? 5 : 2
         
         let flowLayout = collectionViewLayout as! UICollectionViewFlowLayout
         

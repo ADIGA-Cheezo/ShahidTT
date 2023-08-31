@@ -30,5 +30,25 @@ class HomeViewModel {
             }
         }
     }
+    
+    func search(query: String, completion: @escaping () -> Void) {
+        GIFs.removeAll()
+        let parameters: [String : Any] = ["api_key": API.APIKey,
+                                          "q": query,
+                                          "limit": itemsPerPage]
+        
+        guard let url = URL(string: API.searchURL) else { return }
+        NetworkManager.shared.requestData(url: url, method: .get, parameters: parameters) { (result: Result<GiphyItem, Error>) in
+            switch result {
+            case .success(let response):
+                DispatchQueue.main.async {
+                    self.GIFs.append(contentsOf: response.data) // Append new data
+                    completion()
+                }
+            case .failure(let error):
+                print("Error: \(error)")
+            }
+        }
+    }
 }
 

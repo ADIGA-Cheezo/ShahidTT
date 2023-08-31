@@ -10,7 +10,7 @@ import UIKit
 enum API {
     static let APIKey = "brgaGffldAQVWMaojy8fQnxoVuf2eX4a"
     static let baseURL = "https://api.giphy.com/v1/gifs/trending"
-    static let searchURL = ""
+    static let searchURL = "https://api.giphy.com/v1/gifs/search"
 }
 
 enum Color {
