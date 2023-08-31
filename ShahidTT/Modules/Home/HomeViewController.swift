@@ -97,8 +97,8 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
         
         cell.toggleFavoriteHandler = { [weak self] in
             self?.favoriteViewModel.toggleFavoriteStatus(for: cellData[indexPath.item])
-                    cell.favoriteButton.isSelected = !cell.favoriteButton.isSelected
-                }
+            cell.favoriteButton.isSelected = !cell.favoriteButton.isSelected
+        }
         
         return cell
     }
@@ -139,19 +139,19 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
 
 extension HomeViewController: UISearchBarDelegate {
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
-            searchActive = true;
-        }
-
+        searchActive = true;
+    }
+    
     func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
-            searchActive = false;
-        }
+        searchActive = false;
+    }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-            searchActive = true;
+        searchActive = true;
         
         viewModel.search(query: searchBar.text ?? "") { [weak self] in
             self?.isLoading = false
             self?.collectionView.reloadData()
         }
-        }
+    }
 }
